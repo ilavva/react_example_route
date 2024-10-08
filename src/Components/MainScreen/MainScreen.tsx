@@ -2,8 +2,8 @@ import React from "react";
 import "./MainScreen.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import { NewNavBar } from "../../NewNavBar/NewNavBar";
-import { arrForNav } from "../../NewNavBar/NavBarInfo";
+import { NewNavBar } from "../NewNavBar/NewNavBar";
+import { arrForNav } from "../NewNavBar/NavBarInfo";
 import NavBar from "../NavBar/NavBar";
 
 const MainScreen = () => {

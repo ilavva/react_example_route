@@ -1,7 +1,7 @@
-import { About } from "../Components/About/About";
-import CheesecakeRecipe from "../Components/CheesecakeRecipe/CheesecakeRecipe";
-import { Gallery } from "../Components/Gallery/Gallery";
-import { Home } from "../Components/Home/Home";
+import { About } from "../About/About";
+import CheesecakeRecipe from "../CheesecakeRecipe/CheesecakeRecipe";
+import { Gallery } from "../Gallery/Gallery";
+import { Home } from "../Home/Home";
 import { ContactUs } from "../ContactUs/ContactUs";
 
 export type NavItem = {
