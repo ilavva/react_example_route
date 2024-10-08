@@ -1,0 +1,6 @@
+.NewNavBar {
+  display: flex;
+  justify-content: space-around;
+  background: #e8e8e8;
+  padding: 10px;
+}
