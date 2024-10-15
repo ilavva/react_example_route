@@ -1,0 +1,8 @@
+.SpeakerView {
+  border-left: 1px dashed gray;
+  padding-left: 15px;
+  margin-left: 10px;
+}
+.SpeakerView img {
+  border-radius: 10px;
+}
