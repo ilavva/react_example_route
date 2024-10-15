@@ -1,13 +1,8 @@
 {
-  "extends": [
-    "react-app",
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:prettier/recommended",
-  ],
-  "plugins": ["react", "import", "jsx-a11y", "prettier"],
+  "extends": ["react-app", "eslint:recommended", "plugin:react/recommended"],
+  "plugins": ["react", "import", "jsx-a11y"],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": "warn",
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "no-unused-vars": "warn",
