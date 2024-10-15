@@ -1,0 +1,9 @@
+.child-class {
+  margin-top: 20px;
+  background-color: rgb(244, 244, 238);
+  border: 1px dashed green;
+  border-radius: 10px;
+  text-align: center;
+  width: 200px;
+  margin: auto;
+}
