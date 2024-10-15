@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./ContactUs.css";
-import "../utils/FormUtils";
-import { FormInfo } from "../../utils/FormUtils";
+
+import { FormInfo } from "../utils/FormUtils";
+
 export const ContactUs = () => {
   const [myFormData, setMyFormData] = useState({
     fname: "",
