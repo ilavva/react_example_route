@@ -1,9 +1,10 @@
 import { StringLiteral } from "typescript";
 import "./FoodDishes.css";
 import React, { useEffect, useState } from "react";
+import { Dish } from "../Dish/Dish";
 
 //"https://www.themealdb.com/images/media/meals/sytuqu1511553755.jpg",
-export type Dish = {
+export type DishInfo = {
   strMeal: string;
   strMealThumb: string;
 
@@ -12,7 +13,7 @@ export type Dish = {
 
 //https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef
 const FoodDishes = (props: { strDish: string }) => {
-  const [dishesArr, setDishesArray] = useState<Dish[]>();
+  const [dishesArr, setDishesArray] = useState<DishInfo[]>();
   useEffect(() => {
     fetch(
       `https://www.themealdb.com/api/json/v1/1/filter.php?c=${props.strDish}`
@@ -32,15 +33,7 @@ const FoodDishes = (props: { strDish: string }) => {
       <div className="dishes-gallery">
         {dishesArr &&
           dishesArr.map((curr) => {
-            return (
-              <div className="dish-card">
-                <img src={`${curr.strMealThumb}/preview`} />{" "}
-                <div>
-                  <p key={curr.idMeal}>{curr.strMeal}</p>
-                  <p>{curr.idMeal}</p>
-                </div>
-              </div>
-            );
+            return <Dish theDish={curr}></Dish>;
           })}
       </div>
     </div>
