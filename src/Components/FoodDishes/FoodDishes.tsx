@@ -31,8 +31,8 @@ const FoodDishes = (props: { strDish: string }) => {
       </p>
       <div className="dishes-gallery">
         {dishesArr &&
-          dishesArr.map((curr, index) => {
-            return <Dish key={index} theDish={curr}></Dish>;
+          dishesArr.map((curr) => {
+            return <Dish key={curr.idMeal} theDish={curr}></Dish>;
           })}
       </div>
     </div>
