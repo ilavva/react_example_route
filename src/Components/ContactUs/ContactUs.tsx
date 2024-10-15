@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./ContactUs.css";
+import "../utils/FormUtils";
+import { FormInfo } from "../../utils/FormUtils";
 export const ContactUs = () => {
   const [myFormData, setMyFormData] = useState({
     fname: "",
@@ -9,7 +11,12 @@ export const ContactUs = () => {
     msg: "",
   });
 
-  const userTypedSomething = (e: React.FormEvent, fieldName: string) => {
+  const userTypedSomething = (
+    e: React.FormEvent<HTMLInputElement>,
+    fieldName: string,
+    setMyFormData: React.Dispatch<React.SetStateAction<FormInfo>>,
+    myFormData: FormInfo
+  ) => {
     console.log("user Typed Something ");
     console.log((e.target as HTMLInputElement).value);
 
@@ -23,30 +30,40 @@ export const ContactUs = () => {
   return (
     <div>
       <h1>ContactUs</h1>
-      <div>
+      <div className="ContactForm">
         <input
           type="text"
-          onInput={(e) => userTypedSomething(e, "fname")}
+          onInput={(e) =>
+            userTypedSomething(e, "fname", setMyFormData, myFormData)
+          }
           placeholder="First Name"
         />
         <input
           type="text"
-          onInput={(e) => userTypedSomething(e, "lname")}
+          onInput={(e) =>
+            userTypedSomething(e, "lname", setMyFormData, myFormData)
+          }
           placeholder="Last Name"
         />
         <input
           type="text"
-          onInput={(e) => userTypedSomething(e, "phone")}
+          onInput={(e) =>
+            userTypedSomething(e, "phone", setMyFormData, myFormData)
+          }
           placeholder="Phone"
         />
         <input
           type="text"
-          onInput={(e) => userTypedSomething(e, "email")}
+          onInput={(e) =>
+            userTypedSomething(e, "email", setMyFormData, myFormData)
+          }
           placeholder="email"
         />
         <input
           type="text"
-          onInput={(e) => userTypedSomething(e, "msg")}
+          onInput={(e) =>
+            userTypedSomething(e, "msg", setMyFormData, myFormData)
+          }
           placeholder="message"
         />
         <input type="button" value="Submit" />

@@ -1,0 +1,12 @@
+.ContactForm {
+  display: flex;
+  flex-direction: column;
+}
+.ContactForm input {
+  margin: auto;
+  max-width: 90%;
+  padding: 5px;
+  margin-top: 10px;
+  width: 300px;
+  font-size: larger;
+}
