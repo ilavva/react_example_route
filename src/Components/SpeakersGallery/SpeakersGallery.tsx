@@ -28,7 +28,7 @@ export const SpeakersGallery = (props: {
             return (
               <div
                 key={curr.login.uuid}
-                onClick={(e) => {
+                onClick={() => {
                   return aSpeakerWasClicked(curr);
                 }}
                 onKeyDown={(e) => {
