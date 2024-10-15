@@ -1,6 +1,5 @@
-import { StringLiteral } from "typescript";
 import "./FoodDishes.css";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Dish } from "../Dish/Dish";
 
 //"https://www.themealdb.com/images/media/meals/sytuqu1511553755.jpg",
