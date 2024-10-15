@@ -1,0 +1,14 @@
+.SpeakerCard {
+  display: flex;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 20px;
+}
+.SpeakerCard img {
+  border-radius: 50%;
+  padding: 5px;
+}
+.SpeakerCard:hover {
+  cursor: pointer;
+  background-color: gainsboro;
+}

@@ -1,0 +1,13 @@
+.mainContent {
+  display: flex;
+  margin: auto;
+  padding: 10px;
+}
+.leftSide {
+  width: 30%;
+  height: 80%;
+  overflow-y: auto;
+}
+.rightSide {
+  width: 70%;
+}
