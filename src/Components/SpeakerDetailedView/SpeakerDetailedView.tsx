@@ -34,6 +34,7 @@ export const SpeakerDetailedView = (props: { spkr: Speaker }) => {
         <a
           href={`https://www.google.com/maps?q=${props.spkr.location.coordinates.latitude},${props.spkr.location.coordinates.latitude}`}
           target="_blank"
+          rel="noreferrer"
         >
           View on Google Maps
         </a>

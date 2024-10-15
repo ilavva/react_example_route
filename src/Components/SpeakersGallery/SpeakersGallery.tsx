@@ -27,9 +27,19 @@ export const SpeakersGallery = (props: {
           speackersArr.map((curr) => {
             return (
               <div
+                key={curr.login.uuid}
                 onClick={(e) => {
                   return aSpeakerWasClicked(curr);
                 }}
+                onKeyDown={(e) => {
+                  // Trigger the click handler when the Enter key is pressed
+                  if (e.key === "Enter" || e.key === " ") {
+                    aSpeakerWasClicked(curr);
+                  }
+                }}
+                tabIndex={0} // Makes the div focusable
+                role="button" // Optional: improves accessibility by indicating that it's a button
+                style={{ cursor: "pointer" }} // Optional: indicates that the element is clickable
               >
                 <SpeakerCard speaker={curr} />
               </div>

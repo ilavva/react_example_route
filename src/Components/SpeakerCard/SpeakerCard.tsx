@@ -2,6 +2,9 @@ import "./SpeakerCard.css";
 
 import React from "react";
 export type Speaker = {
+  login: {
+    uuid: string;
+  };
   gender: string;
   name: {
     title: string;
