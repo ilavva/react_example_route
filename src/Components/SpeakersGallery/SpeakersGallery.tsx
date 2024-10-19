@@ -8,7 +8,7 @@ export const SpeakersGallery = (props: {
 }) => {
   const [speackersArr, setSpeakersArr] = useState<Speaker[]>([]);
   useEffect(() => {
-    fetch(`https://randomuser.me/api/?results=50`)
+    fetch(`https://randomuser.me/api/?results=8`)
       .then((dataFromAPI) => {
         return dataFromAPI.json();
       })
