@@ -5,6 +5,9 @@ import { Home } from "../Home/Home";
 import { ContactUs } from "../ContactUs/ContactUs";
 import { Food } from "../Food/Food";
 
+import { Lesson1 } from "../Lesson1/Lesson1";
+import { Parent1 } from "../Parent1/Parent1";
+
 export type NavItem = {
   key: number;
   displayStr: string;
@@ -29,7 +32,7 @@ export const arrForNav = [
     key: 2,
     displayStr: "Products",
     hrefStr: "/products",
-    refComponent: Gallery,
+    refComponent: Lesson1,
   },
   {
     key: 3,
@@ -42,6 +45,24 @@ export const arrForNav = [
     displayStr: "Contact Us",
     hrefStr: "/contact",
     refComponent: ContactUs,
+  },
+  {
+    key: 5,
+    displayStr: "demo-01",
+    hrefStr: "/demo-01",
+    refComponent: Parent1,
+  },
+  {
+    key: 6,
+    displayStr: "Gallery",
+    hrefStr: "/gallery",
+    refComponent: Gallery,
+  },
+  {
+    key: 7,
+    displayStr: "Recipe",
+    hrefStr: "/cheese",
+    refComponent: CheesecakeRecipe,
   },
 ];
 
