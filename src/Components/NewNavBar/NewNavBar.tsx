@@ -45,7 +45,7 @@ export const NewNavBar = (props: { theArr: NavItem[] }) => {
             {/* Navigation links */}
             <ul className={isExpanded ? "nav-menu active" : "nav-menu"}>
               {props.theArr.map((curr) => (
-                <li key={curr.hrefStr} className="nav-item">
+                <li key={`${curr.key}_${curr.hrefStr}`} className="nav-item">
                   <NavLink
                     to={curr.hrefStr}
                     className={({ isActive }) =>

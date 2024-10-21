@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ContactUs.css";
 
-import { FormInfo } from "../utils/FormUtils";
+import { FormInfo } from "./FormUtils";
 
 export const ContactUs = () => {
   const [myFormData, setMyFormData] = useState({

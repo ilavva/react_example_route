@@ -1,4 +1,4 @@
-import { Speaker } from "../SpeakerCard/SpeakerCard";
+import { Speaker } from "../SpeakerCard/Speaker";
 import "./SpeakerDetailedView.css";
 import React from "react";
 

@@ -28,7 +28,7 @@ export const Food = () => {
     <div className="food-component">
       <select name="" id="" onChange={userChoseCategory} defaultValue={0}>
         <option key={0} value={0} disabled>
-          -- select value --
+          {`which food do you like?`}
         </option>
         {categoriesArray &&
           categoriesArray.map((curr) => {

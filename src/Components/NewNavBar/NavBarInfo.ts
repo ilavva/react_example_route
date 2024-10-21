@@ -1,13 +1,14 @@
 import { About } from "../About/About";
-import CheesecakeRecipe from "../CheesecakeRecipe/CheesecakeRecipe";
-import { Gallery } from "../Gallery/Gallery";
+import CheesecakeRecipe from "../Lesson1-components/CheesecakeRecipe/CheesecakeRecipe";
+import { Gallery } from "../Lesson1-components/Gallery/Gallery";
 import { Home } from "../Home/Home";
 import { ContactUs } from "../ContactUs/ContactUs";
-import { Food } from "../Food/Food";
+import { Food } from "../Food-Components/Food/Food";
 
-import { Lesson1 } from "../Lesson1/Lesson1";
-import { Parent1 } from "../Parent1/Parent1";
-import { Conference } from "../Conference/Conference";
+import { Lesson1 } from "../Lesson1-components/Lesson1/Lesson1";
+import { Parent1 } from "../Lesson2-Components/Parent1/Parent1";
+import { Conference } from "../Conference-Components/Conference/Conference";
+import { FoodRecipies } from "../FoodRecipies-Components/FoodRecipies/FoodRecipies";
 export type NavItem = {
   key: number;
   displayStr: string;
@@ -17,29 +18,19 @@ export type NavItem = {
 
 export const arrForNav = [
   {
-    key: 0,
-    displayStr: "Home",
-    hrefStr: "/",
-    refComponent: Home,
-  },
-  {
-    key: 1,
-    displayStr: "About",
-    hrefStr: "/about",
-    refComponent: About,
-  },
-  {
     key: 2,
     displayStr: "Conference",
     hrefStr: "/conference",
     refComponent: Conference,
   },
+
   {
-    key: 3,
-    displayStr: "Products",
-    hrefStr: "/products",
-    refComponent: Lesson1,
+    key: 2,
+    displayStr: "Food Recipies",
+    hrefStr: "/FoodRecipies",
+    refComponent: FoodRecipies,
   },
+
   {
     key: 4,
     displayStr: "Meals",
@@ -53,9 +44,21 @@ export const arrForNav = [
     refComponent: ContactUs,
   },
   {
+    key: 1,
+    displayStr: "About",
+    hrefStr: "/about",
+    refComponent: About,
+  },
+  {
+    key: 3,
+    displayStr: "Lesson1",
+    hrefStr: "/lesson1",
+    refComponent: Lesson1,
+  },
+  {
     key: 6,
-    displayStr: "demo-01",
-    hrefStr: "/demo-01",
+    displayStr: "Lesson2",
+    hrefStr: "/lession2",
     refComponent: Parent1,
   },
   {
@@ -69,6 +72,12 @@ export const arrForNav = [
     displayStr: "Recipe",
     hrefStr: "/cheese",
     refComponent: CheesecakeRecipe,
+  },
+  {
+    key: 0,
+    displayStr: "Home",
+    hrefStr: "/",
+    refComponent: Home,
   },
 ];
 

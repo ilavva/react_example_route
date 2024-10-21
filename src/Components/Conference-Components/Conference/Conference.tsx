@@ -1,4 +1,4 @@
-import { Speaker } from "../SpeakerCard/SpeakerCard";
+import { Speaker } from "../SpeakerCard/Speaker";
 import { SpeakerDetailedView } from "../SpeakerDetailedView/SpeakerDetailedView";
 import { SpeakersGallery } from "../SpeakersGallery/SpeakersGallery";
 import "./Conference.css";

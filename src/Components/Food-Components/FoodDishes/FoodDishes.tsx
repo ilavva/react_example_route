@@ -28,7 +28,7 @@ const FoodDishes = (props: { strDish: string }) => {
     <div>
       {props.strDish !== "" ? (
         <p>
-          Chosen dish is: <strong>{props.strDish}</strong>
+          For <strong>{props.strDish}</strong> we have the following dishes:
         </p>
       ) : (
         <p>Select the Dish ↑</p>
