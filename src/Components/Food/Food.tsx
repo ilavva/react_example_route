@@ -9,7 +9,7 @@ export type Category = {
 };
 export const Food = () => {
   const [categoriesArray, setCategoriesArray] = useState<Category[]>();
-  const [theChosenCategory, setTheChosenCategory] = useState("Beef");
+  const [theChosenCategory, setTheChosenCategory] = useState("");
 
   useEffect(() => {
     fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
@@ -26,8 +26,8 @@ export const Food = () => {
   };
   return (
     <div className="food-component">
-      <select name="" id="" onChange={userChoseCategory}>
-        <option key={0} disabled selected>
+      <select name="" id="" onChange={userChoseCategory} defaultValue={0}>
+        <option key={0} value={0} disabled>
           -- select value --
         </option>
         {categoriesArray &&

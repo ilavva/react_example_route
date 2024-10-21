@@ -26,9 +26,13 @@ const FoodDishes = (props: { strDish: string }) => {
   }, [props.strDish]);
   return (
     <div>
-      <p>
-        Chosen dish is: <strong>{props.strDish}</strong>
-      </p>
+      {props.strDish !== "" ? (
+        <p>
+          Chosen dish is: <strong>{props.strDish}</strong>
+        </p>
+      ) : (
+        <p>Select the Dish ↑</p>
+      )}
       <div className="dishes-gallery">
         {dishesArr &&
           dishesArr.map((curr) => {

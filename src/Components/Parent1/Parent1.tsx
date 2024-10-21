@@ -15,7 +15,11 @@ export const Parent1 = () => {
           userChoseFlavor(e);
           setChosenFlavor(e.target.value);
         }}
+        defaultValue={0}
       >
+        <option value="0" disabled>
+          -- choose value --
+        </option>
         <option value="Vanilla">Vanilla</option>
         <option value="Chocolate">Chocolate</option>
         <option value="Pistachio">Pistachio</option>
