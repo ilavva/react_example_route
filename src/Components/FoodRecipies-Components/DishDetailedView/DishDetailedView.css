@@ -1,7 +1,54 @@
 .dish-detiled-view {
   background: #e7ffe9;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
 }
+.dish-details {
+  text-align: start;
+}
+
 .dish-detiled-view img {
   width: 95%;
   border-radius: 10px;
+}
+ul.dish-ingredients {
+  display: flex;
+  list-style-type: none;
+  flex-wrap: wrap;
+
+  gap: 10px;
+  margin: 20px;
+  text-align: start;
+}
+
+.dish-ingredients li:not(:last-child)::after {
+  content: ",";
+}
+.dish-measures {
+  padding-left: 5px;
+  color: #111f11df;
+  font-weight: 500;
+}
+
+.dish-instructions {
+  text-align: start;
+  background-image: linear-gradient(
+    0deg,
+    #a2cdadbe 2.63%,
+    #f2f5f319 2.63%,
+    #f2f5f529 50%,
+    #a4cda2df 50%,
+    #a2cdb5b9 52.63%,
+    #f2f5f362 52.63%,
+    #f2f5f416 100%
+  );
+  background-size: 3em 3em;
+  padding: 0 10px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5em;
+  margin-bottom: 10px;
 }

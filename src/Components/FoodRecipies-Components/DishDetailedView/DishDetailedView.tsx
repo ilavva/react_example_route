@@ -4,110 +4,85 @@ import { DishInfo, DishDetails } from "../MealDBTypes";
 import "./DishDetailedView.css";
 
 export const DishDetailedView = (props: { theDish: DishInfo }) => {
-  const [dishDetails, setDishDatails] = useState<DishDetails>();
+  const [dishDetails, setDishDetails] = useState<DishDetails>();
+
   useEffect(() => {
-    fetch(
-      `https://www.themealdb.com/api/json/v1/1/lookup.php?i${props.theDish.idMeal}`
-    )
+    const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${props.theDish.idMeal}`;
+    fetch(url)
       .then((theData) => {
         return theData.json();
       })
       .then((theDataAsObj) => {
-        setDishDatails(theDataAsObj.meals);
+        setDishDetails(theDataAsObj.meals[0]);
       });
   }, [props.theDish]);
 
   return (
     <div className="dish-detiled-view">
-      <h2>Dish Detailed View</h2>
-      <p>{props.theDish.strMeal}</p>
+      {!dishDetails && (
+        <>
+          <h2>{props.theDish.strMeal}</h2>
 
-      <img src={props.theDish.strMealThumb} alt={props.theDish.strMeal} />
+          <img src={props.theDish.strMealThumb} alt={props.theDish.strMeal} />
+        </>
+      )}
 
       {dishDetails && (
-        <div>
+        <div className="dish-details">
           <h3>{dishDetails.strMeal}</h3>
           {dishDetails.strDrinkAlternate && (
-            <p>({dishDetails.strDrinkAlternate})</p>
+            <p>{dishDetails.strDrinkAlternate}</p>
           )}
 
-          {dishDetails.strCategory && <p>({dishDetails.strCategory})</p>}
-          {dishDetails.strArea && <p>({dishDetails.strArea})</p>}
+          {dishDetails.strCategory && <p>{dishDetails.strCategory}</p>}
+          {dishDetails.strArea && <p>Origin: {dishDetails.strArea}</p>}
+
           {dishDetails.strInstructions && (
-            <p>({dishDetails.strInstructions})</p>
+            <p className="dish-instructions">
+              {dishDetails.strInstructions.split(".").map((line, index) => {
+                return (
+                  line.trim().length > 0 && (
+                    <span key={index}>
+                      {line.trim()}.
+                      <br />
+                    </span>
+                  )
+                );
+              })}
+            </p>
           )}
           {dishDetails.strMealThumb && (
             <img src={dishDetails.strMealThumb} alt={dishDetails.strMeal} />
           )}
-          {dishDetails.strTags && <p>({dishDetails.strTags})</p>}
+          {dishDetails.strTags && <p>{dishDetails.strTags}</p>}
           {dishDetails.strYoutube && (
             <p>
               <a href={dishDetails.strYoutube}>video: {dishDetails.strMeal}</a>
             </p>
           )}
-          <ul className="dish-ingredients">
-            {dishDetails.strIngredient1 && (
-              <li>({dishDetails.strIngredient1})</li>
-            )}
-            {dishDetails.strIngredient2 && (
-              <li>({dishDetails.strIngredient2})</li>
-            )}
-            {dishDetails.strIngredient3 && (
-              <li>({dishDetails.strIngredient3})</li>
-            )}
-            {dishDetails.strIngredient4 && (
-              <li>({dishDetails.strIngredient4})</li>
-            )}
-            {dishDetails.strIngredient5 && (
-              <li>({dishDetails.strIngredient5})</li>
-            )}
-            {dishDetails.strIngredient6 && (
-              <li>({dishDetails.strIngredient6})</li>
-            )}
-            {dishDetails.strIngredient7 && (
-              <li>({dishDetails.strIngredient7})</li>
-            )}
-            {dishDetails.strIngredient8 && (
-              <li>({dishDetails.strIngredient8})</li>
-            )}
-            {dishDetails.strIngredient9 && (
-              <li>({dishDetails.strIngredient9})</li>
-            )}
-            {dishDetails.strIngredient10 && (
-              <li>({dishDetails.strIngredient10})</li>
-            )}
-            {dishDetails.strIngredient11 && (
-              <li>({dishDetails.strIngredient11})</li>
-            )}
-            {dishDetails.strIngredient12 && (
-              <li>({dishDetails.strIngredient12})</li>
-            )}
-            {dishDetails.strIngredient13 && (
-              <li>({dishDetails.strIngredient13})</li>
-            )}
-            {dishDetails.strIngredient14 && (
-              <li>({dishDetails.strIngredient14})</li>
-            )}
-            {dishDetails.strIngredient15 && (
-              <li>({dishDetails.strIngredient15})</li>
-            )}
-            {dishDetails.strIngredient16 && (
-              <li>({dishDetails.strIngredient16})</li>
-            )}
-            {dishDetails.strIngredient17 && (
-              <li>({dishDetails.strIngredient17})</li>
-            )}
+          {dishDetails.strIngredient1 && <h4>Ingredients:</h4>}
 
-            {dishDetails.strIngredient18 && (
-              <li>({dishDetails.strIngredient18})</li>
-            )}
-            {dishDetails.strIngredient19 && (
-              <li>({dishDetails.strIngredient19})</li>
-            )}
-            {dishDetails.strIngredient20 && (
-              <li>({dishDetails.strIngredient20})</li>
-            )}
+          <ul className="dish-ingredients">
+            {Array.from({ length: 20 }, (_, i) => i + 1).map((index) => {
+              const ingredient =
+                dishDetails[`strIngredient${index}` as keyof DishDetails];
+              const measure =
+                dishDetails[`strMeasure${index}` as keyof DishDetails];
+
+              return (
+                ingredient &&
+                ingredient.trim().length > 0 && (
+                  <li key={index}>
+                    {ingredient}
+                    {measure && measure.trim().length > 0 && (
+                      <span className="dish-measures"> {measure}</span>
+                    )}
+                  </li>
+                )
+              );
+            })}
           </ul>
+
           {dishDetails.strDrinkAlternate && (
             <p>({dishDetails.strDrinkAlternate})</p>
           )}
