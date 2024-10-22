@@ -14,7 +14,7 @@ export const FoodRecipies = () => {
         <div className="content-menu">
           <DishesGallery setSelectedDish={setTheDish} />
         </div>
-        <div className="content-details">
+        <div className="content-details" id="Recipies">
           {theDish && <Dish theDish={theDish}></Dish>}
           {theDish && <DishDetailedView theDish={theDish} />}
         </div>

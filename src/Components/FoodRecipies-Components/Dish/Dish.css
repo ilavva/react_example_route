@@ -46,4 +46,8 @@
   .dishId {
     display: none;
   }
+
+  .selected .dish-card {
+    display: none;
+  }
 }
