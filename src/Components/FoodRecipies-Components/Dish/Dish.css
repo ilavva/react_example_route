@@ -2,12 +2,19 @@
   background-color: rgb(218, 247, 240);
   border: 1px solid rgb(105, 140, 189);
   text-indent: 5px;
-  margin: 10px auto;
-  padding: 10px;
+  margin: 5px auto;
+  padding: 5px;
   display: flex;
   border-radius: 10px;
   width: 200px;
 }
+.selected .dish-card {
+  background-color: rgb(142, 236, 214);
+  border: 2px solid rgb(65, 155, 135);
+
+  text-shadow: 1px rgb(83, 164, 145);
+}
+
 .dish-card p {
   text-align: center;
   padding-left: 10px;

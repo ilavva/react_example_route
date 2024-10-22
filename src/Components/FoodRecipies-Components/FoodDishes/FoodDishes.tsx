@@ -11,6 +11,11 @@ const FoodDishes = (props: {
   setSelectedDish: Dispatch<SetStateAction<DishInfo | undefined>>;
 }) => {
   const [dishesArr, setDishesArray] = useState<DishInfo[]>();
+  const [markedDish, setMarkedDish] = useState<DishInfo>();
+  const handleMarkDish = (dish: DishInfo) => {
+    setMarkedDish(dish);
+    props.setSelectedDish(dish);
+  };
   useEffect(() => {
     fetch(
       `https://www.themealdb.com/api/json/v1/1/filter.php?c=${props.strDish}`
@@ -37,14 +42,19 @@ const FoodDishes = (props: {
             return (
               // setSelectedDish={props.setSelectedDish}
               <div
+                className={
+                  markedDish && markedDish.idMeal == dish.idMeal
+                    ? "selected"
+                    : ""
+                }
                 key={dish.idMeal}
                 onClick={() => {
-                  props.setSelectedDish(dish);
+                  handleMarkDish(dish);
                 }}
                 onKeyDown={(e) => {
                   // Trigger the click handler when the Enter key is pressed
                   if (e.key === "Enter" || e.key === " ") {
-                    props.setSelectedDish(dish);
+                    handleMarkDish(dish);
                   }
                 }}
                 tabIndex={0} // Makes the div focusable
