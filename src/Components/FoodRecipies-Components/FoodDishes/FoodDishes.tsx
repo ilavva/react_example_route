@@ -1,17 +1,15 @@
 import "./FoodDishes.css";
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Dish } from "../Dish/Dish";
+import { DishInfo } from "../MealDBTypes";
 
 //"https://www.themealdb.com/images/media/meals/sytuqu1511553755.jpg",
-export type DishInfo = {
-  strMeal: string;
-  strMealThumb: string;
-
-  idMeal: string;
-};
 
 //https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef
-const FoodDishes = (props: { strDish: string }) => {
+const FoodDishes = (props: {
+  strDish: string;
+  setSelectedDish: Dispatch<SetStateAction<DishInfo | undefined>>;
+}) => {
   const [dishesArr, setDishesArray] = useState<DishInfo[]>();
   useEffect(() => {
     fetch(
@@ -33,10 +31,16 @@ const FoodDishes = (props: { strDish: string }) => {
       ) : (
         <p>Select the Dish ↑</p>
       )}
-      <div className="dishes-gallery">
+      <div className="food-dishes-gallery">
         {dishesArr &&
           dishesArr.map((curr) => {
-            return <Dish key={curr.idMeal} theDish={curr}></Dish>;
+            return (
+              <Dish
+                key={curr.idMeal}
+                theDish={curr}
+                setSelectedDish={props.setSelectedDish}
+              ></Dish>
+            );
           })}
       </div>
     </div>

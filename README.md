@@ -1,14 +1,14 @@
-## Published
-
-https://example-demo-01.netlify.app/
-
-https://exampe-demo-02.netlify.app/
-
-https://example-demo-03.netlify.app/
-
 ## Git code:
 
 https://github.com/ilavva/react_example_route
+
+## Published
+
+https://example-demo-01.netlify.app/ - main branch
+
+https://exampe-demo-02.netlify.app/ - two_components branch
+
+https://example-demo-03.netlify.app/ - conference branch
 
 ## Branches:
 

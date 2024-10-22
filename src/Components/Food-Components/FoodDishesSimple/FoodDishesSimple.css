@@ -1,0 +1,15 @@
+.dishes-simple-gallery {
+  padding: 15px;
+  width: 100%;
+
+  margin: 10px;
+}
+.food-dishes-simple-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 10px;
+
+  overflow-x: hidden;
+  overflow-x: hidden;
+}

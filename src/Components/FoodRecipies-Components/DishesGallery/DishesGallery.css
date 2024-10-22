@@ -1,0 +1,8 @@
+.dishes-gallery {
+  width: 100%;
+}
+.food-gallery {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}

@@ -3,12 +3,14 @@ import CheesecakeRecipe from "../Lesson1-components/CheesecakeRecipe/CheesecakeR
 import { Gallery } from "../Lesson1-components/Gallery/Gallery";
 import { Home } from "../Home/Home";
 import { ContactUs } from "../ContactUs/ContactUs";
-import { Food } from "../Food-Components/Food/Food";
+
+import { Conference } from "../Conference-Components/Conference/Conference";
+import { FoodRecipies } from "../FoodRecipies-Components/FoodRecipies/FoodRecipies";
+import { FoodSimple } from "../Food-Components/FoodSimple/FoodSimple";
 
 import { Lesson1 } from "../Lesson1-components/Lesson1/Lesson1";
 import { Parent1 } from "../Lesson2-Components/Parent1/Parent1";
-import { Conference } from "../Conference-Components/Conference/Conference";
-import { FoodRecipies } from "../FoodRecipies-Components/FoodRecipies/FoodRecipies";
+
 export type NavItem = {
   key: number;
   displayStr: string;
@@ -33,9 +35,9 @@ export const arrForNav = [
 
   {
     key: 4,
-    displayStr: "Meals",
-    hrefStr: "/food",
-    refComponent: Food,
+    displayStr: "Food Categories",
+    hrefStr: "/food-simple",
+    refComponent: FoodSimple,
   },
   {
     key: 5,
