@@ -1,3 +1,4 @@
+import { Dish } from "../Dish/Dish";
 import { DishDetailedView } from "../DishDetailedView/DishDetailedView";
 import { DishesGallery } from "../DishesGallery/DishesGallery";
 import { DishInfo } from "../MealDBTypes";
@@ -14,6 +15,7 @@ export const FoodRecipies = () => {
           <DishesGallery setSelectedDish={setTheDish} />
         </div>
         <div className="content-details">
+          {theDish && <Dish theDish={theDish}></Dish>}
           {theDish && <DishDetailedView theDish={theDish} />}
         </div>
       </div>

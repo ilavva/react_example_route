@@ -15,8 +15,18 @@
 }
 .content-details {
   width: 50%;
-  padding: 10px;
-  border: 1px solid rgb(128, 128, 128);
+
   border-radius: 10px;
-  height: 80vh;
+}
+
+@media screen and (max-width: 660px) {
+  .content-menu {
+    width: 100%;
+  }
+  .content-details {
+    width: 100%;
+  }
+  .content-data {
+    flex-direction: column;
+  }
 }

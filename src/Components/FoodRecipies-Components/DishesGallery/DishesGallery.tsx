@@ -22,8 +22,8 @@ export const DishesGallery = (props: {
     setTheChosenCategory(e.target.value);
   };
   return (
-    <div>
-      <div className="dishes-gallery">
+    <div className="dishes-gallery">
+      <div>
         <h2>Dishes Gallery</h2>
         <select name="" id="" onChange={userChoseCategory} defaultValue={0}>
           <option key={0} value={0} disabled>
@@ -35,7 +35,7 @@ export const DishesGallery = (props: {
             })}
         </select>
       </div>
-      <div className="food-dishes-gallery">
+      <div>
         <FoodDishes
           strDish={theChosenCategory}
           setSelectedDish={props.setSelectedDish}

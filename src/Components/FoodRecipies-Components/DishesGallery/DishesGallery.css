@@ -1,8 +1,4 @@
 .dishes-gallery {
   width: 100%;
-}
-.food-gallery {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+  background-color: rgb(230, 238, 237);
 }

@@ -1,15 +1,19 @@
-.dishes-gallery {
-  padding: 15px;
-  width: 100%;
-  background: rgb(229, 255, 252);
-  margin: 10px;
-}
 .food-dishes-gallery {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
   width: 100%;
-  gap: 10px;
-  background: rgb(211, 226, 249);
+  margin: 10px auto;
+  background: rgb(229, 255, 252);
   overflow-x: hidden;
   overflow-x: hidden;
+}
+@media screen and (max-width: 660px) {
+  .food-dishes-gallery {
+    flex-direction: column;
+  }
+  .food-dishes-gallery div {
+    width: 100%;
+    margin: 2px;
+  }
 }

@@ -33,13 +33,26 @@ const FoodDishes = (props: {
       )}
       <div className="food-dishes-gallery">
         {dishesArr &&
-          dishesArr.map((curr) => {
+          dishesArr.map((dish) => {
             return (
-              <Dish
-                key={curr.idMeal}
-                theDish={curr}
-                setSelectedDish={props.setSelectedDish}
-              ></Dish>
+              // setSelectedDish={props.setSelectedDish}
+              <div
+                key={dish.idMeal}
+                onClick={() => {
+                  props.setSelectedDish(dish);
+                }}
+                onKeyDown={(e) => {
+                  // Trigger the click handler when the Enter key is pressed
+                  if (e.key === "Enter" || e.key === " ") {
+                    props.setSelectedDish(dish);
+                  }
+                }}
+                tabIndex={0} // Makes the div focusable
+                role="button" // Optional: improves accessibility by indicating that it's a button
+                style={{ cursor: "pointer" }} // Optional: indicates that the element is clickable
+              >
+                <Dish theDish={dish}></Dish>
+              </div>
             );
           })}
       </div>
